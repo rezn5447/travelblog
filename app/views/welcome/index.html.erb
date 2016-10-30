@@ -10,6 +10,8 @@
 <p>Find me in app/views/welcome/index.html.erb</p>
 
 
-<% @articles.each do |article| %>
-<% link_to %>
+<% @posts.each do |post| %>
+<%= link_to 'full post', post_path %>
+<%= post.title %> <%= post.creator %>
+<%= post.body %>
   <% end %>
