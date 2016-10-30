@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# user = User.create!(first_name: 'Reba',
+#                     last_name: 'Valeny',
+#                     email: '123@gmail.com',
+#                     password: '123123'
+#                     )
+
+
+post = Post.create!(title: Faker::App.name, body: Faker::Hipster.paragraph , creator_id: User.first.id)

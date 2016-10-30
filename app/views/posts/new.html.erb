@@ -1,2 +1,11 @@
 <h1>Posts#new</h1>
 <p>Find me in app/views/posts/new.html.erb</p>
+
+
+<div class="container-fluid">
+  <%= form_for @post, url: post_new_path(@post) do |f| %>
+  <%= f.text_field :title, placeholder: 'Title' %>
+  <%= f.text_area :body, placeholder: 'how you feel' %>
+  <%= f.submit %>
+  <% end %>
+</div>
