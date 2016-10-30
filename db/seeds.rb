@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user = User.create!(first_name: 'Reba',
-                    last_name: 'Valeny',
-                    email: '123@gmail.com',
-                    password: '123123'
-                    )
+# user = User.create!(first_name: 'Reba',
+#                     last_name: 'Valeny',
+#                     email: '123@gmail.com',
+#                     password: '123123'
+#                     )
 
 
-post = Post.create!(title: 'Out of the House', body: Faker::Hipster.paragraph , creator: user)
+post = Post.create!(title: Faker::App.name, body: Faker::Hipster.paragraph , creator_id: User.first.id)
