@@ -8,10 +8,16 @@
 
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
+<% if current_user %>
+<%= link_to %>  
+<% else %>  
+<%= link_to 'login', new_user_session_path %>
+<%= link_to 'register', new_user_registration_path %>
 
 
+<% end %>
 <% @posts.each do |post| %>
-<%= link_to 'full post', post_path %>
+<%= link_to 'full post', post_path(post.id) %>
 <%= post.title %> <%= post.creator %>
 <%= post.body %>
   <% end %>
