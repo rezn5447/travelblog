@@ -5,13 +5,21 @@
   </div>
 </div>
 
-
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-
+<div>
+  <h1>Welcome#index</h1>
+  <p>Find me in app/views/welcome/index.html.erb</p>
+  <% if current_user %>
+    <%= link_to current_user.first_name, current_user_path %>  
+  <% else %>  
+    <%= link_to 'login', new_user_session_path %>
+    <%= link_to 'register', new_user_registration_path %>
+  <% end %>
+</div>
 
 <% @posts.each do |post| %>
-<%= link_to 'full post', post_path %>
-<%= post.title %> <%= post.creator %>
-<%= post.body %>
-  <% end %>
+  
+ <p class="title"><%= post.title %></p> 
+ Written by: <%= post.creator.first_name %><br>
+ <p class="body"><%= post.body %></p>
+  <%= link_to 'full post', post_path(post.id) %>
+<% end %>
